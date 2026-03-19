@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alberto Davis — Portafolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ─── CURSOR ─── -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- ─── NAV ─── -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">AD</a>
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link">Sobre mí</a></li>
+      <li><a href="#certificates" class="nav-link">Certificados</a></li>
+      <li><a href="#projects" class="nav-link">Proyectos</a></li>
+      <li><a href="#contact" class="nav-link">Contacto</a></li>
+    </ul>
+    <button class="nav-burger" id="nav-burger" aria-label="Menú">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── MOBILE MENU ─── -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#about" class="mobile-link">Sobre mí</a></li>
+      <li><a href="#certificates" class="mobile-link">Certificados</a></li>
+      <li><a href="#projects" class="mobile-link">Proyectos</a></li>
+      <li><a href="#contact" class="mobile-link">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero" class="hero">
+    <div class="hero-noise"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-up">Ciudad de Panamá, Panamá</p>
+      <h1 class="hero-title">
+        <span class="hero-line reveal-up" data-delay="0">Alberto</span>
+        <span class="hero-line reveal-up accent-mint" data-delay="120">Davis</span>
+      </h1>
+      <p class="hero-subtitle reveal-up" data-delay="240">
+        Ingeniero de<br/><em class="accent-ocean">Software</em>
+      </p>
+      <div class="hero-cta reveal-up" data-delay="360">
+        <a href="#projects" class="btn-primary">Ver Proyectos</a>
+        <a href="#contact" class="btn-ghost">Contacto</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>SCROLL</span>
+    </div>
+
+    <div class="hero-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Python</span><span class="sep">·</span>
+        <span>Web Dev</span><span class="sep">·</span>
+        <span>PHP</span><span class="sep">·</span>
+        <span>SQL</span><span class="sep">·</span>
+        <span>JavaScript</span><span class="sep">·</span>
+        <span>UI/UX</span><span class="sep">·</span>
+        <span>C++</span><span class="sep">·</span>
+        <span>Redes</span><span class="sep">·</span>
+        <span>Python</span><span class="sep">·</span>
+        <span>Web Dev</span><span class="sep">·</span>
+        <span>PHP</span><span class="sep">·</span>
+        <span>SQL</span><span class="sep">·</span>
+        <span>JavaScript</span><span class="sep">·</span>
+        <span>UI/UX</span><span class="sep">·</span>
+        <span>C++</span><span class="sep">·</span>
+        <span>Redes</span><span class="sep">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-label">
+        <span class="section-num">01</span>
+        <span class="section-tag">Sobre Mí</span>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="section-title reveal-up">
+            Desarrollador<br/>
+            Web<br/>
+            <em class="accent-mint">Full Stack</em>
+          </h2>
+          <p class="body-text reveal-up" data-delay="120">
+            Desarrollo aplicaciones web Full Stack con PHP, MySQL, JavaScript y Python.
+            Me interesa construir sistemas que funcionen bien por dentro y se vean bien
+            por fuera, desde la base de datos hasta la interfaz.
+          </p>
+          <p class="body-text reveal-up" data-delay="200">
+            También manejo conocimientos en redes, diseño de interfaces y tengo
+            nociones de ciberseguridad. Puedo adaptarme a roles de
+            desarrollo de escritorio cuando el proyecto lo requiere.
+</p>
+          <div class="about-edu reveal-up" data-delay="280">
+            <div class="edu-item">
+              <span class="edu-year">2023 — Actualidad</span>
+              <span class="edu-name">Ingeniería en Software</span>
+              <span class="edu-school">Universidad Tecnológica de Panamá</span>
+            </div>
+            <div class="edu-item">
+              <span class="edu-year">2017 — 2022</span>
+              <span class="edu-name">Bachiller en Ciencias</span>
+              <span class="edu-school">Instituto Adventista Panameño</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-skills reveal-up" data-delay="180">
+          <h3 class="skills-title">Stack & Habilidades</h3>
+          <div class="skills-list">
+            <div class="skill-row">
+              <span class="skill-name">Python</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="68"></div></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">HTML / CSS</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="48"></div></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">PHP</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="66"></div></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">SQL</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="77"></div></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">Redes</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-name">UI/UX</span>
+              <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+            </div>
+          </div>
+
+          <div class="lang-block">
+            <div class="lang-item">
+              <span class="lang-flag">🇵🇦</span>
+              <span class="lang-name">Español</span>
+              <span class="lang-level">Nativo</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-flag">🇺🇸</span>
+              <span class="lang-name">Inglés</span>
+              <span class="lang-level">B1 Intermedio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CERTIFICATES ─── -->
+  <section id="certificates" class="section certificates">
+    <div class="container">
+      <div class="section-label">
+        <span class="section-num">02</span>
+        <span class="section-tag">Formación</span>
+      </div>
+
+      <h2 class="section-title reveal-up">
+        Certifi<span class="accent-mint">cados</span>
+      </h2>
+      <p class="section-intro reveal-up" data-delay="100">
+        Estos son algunos de los certificados que he obtenido a lo largo de mi formación académica y profesional.
+      </p>
+
+      <div class="certs-grid">
+
+        <article class="cert-card reveal-up" data-delay="0">
+          <div class="cert-header">
+            <div class="cert-icon">🐍</div>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-name">Fundamentos de Python 1</h3>
+          <p class="cert-issuer">Cisco Networking Academy</p>
+          <p class="cert-desc">Programación en Python, estructuras de datos, funciones y módulos.</p>
+          <a href="certificates/python1.pdf" target="_blank" class="cert-link">
+            Ver certificado <span class="cert-arrow">↗</span>
+          </a>
+        </article>
+
+        <article class="cert-card reveal-up" data-delay="80">
+          <div class="cert-header">
+            <div class="cert-icon">🤖</div>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-name">Introducción a la IA con Python</h3>
+          <p class="cert-issuer">Domestika</p>
+          <p class="cert-desc">IA aplicada con Python, machine learning básico y modelos predictivos.</p>
+          <a href="certificates/ia-python.pdf" target="_blank" class="cert-link">
+            Ver certificado <span class="cert-arrow">↗</span>
+          </a>
+        </article>
+
+        <article class="cert-card reveal-up" data-delay="160">
+          <div class="cert-header">
+            <div class="cert-icon">🌐</div>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-name">CCNA: Switching, Routing & Wireless Essentials</h3>
+          <p class="cert-issuer">Cisco Networking Academy</p>
+          <p class="cert-desc">Switching, routing, redes inalámbricas y seguridad de red.</p>
+          <a href="certificates/ccna-srwe.pdf" target="_blank" class="cert-link">
+            Ver certificado <span class="cert-arrow">↗</span>
+          </a>
+        </article>
+
+        <article class="cert-card reveal-up" data-delay="240">
+          <div class="cert-header">
+            <div class="cert-icon">🔌</div>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-name">CCNA: Introduction to Networks</h3>
+          <p class="cert-issuer">Cisco Networking Academy</p>
+          <p class="cert-desc">Modelo OSI, TCP/IP, direccionamiento y configuración de dispositivos.</p>
+          <a href="certificates/ccna-intro.pdf" target="_blank" class="cert-link">
+            Ver certificado <span class="cert-arrow">↗</span>
+          </a>
+        </article>
+
+        <article class="cert-card reveal-up" data-delay="320">
+          <div class="cert-header">
+            <div class="cert-icon">🖥️</div>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-name">Computer Networks: Introducción a las Redes</h3>
+          <p class="cert-issuer">Huawei Talent</p>
+          <p class="cert-desc">Topologías, protocolos y arquitecturas de red empresarial.</p>
+          <a href="certificates/computer-networks.pdf" target="_blank" class="cert-link">
+            Ver certificado <span class="cert-arrow">↗</span>
+          </a>
+        </article>
+
+        <article class="cert-card reveal-up" data-delay="400">
+          <div class="cert-header">
+            <div class="cert-icon">🎨</div>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-name">Figma: Diseño de Interfaces</h3>
+          <p class="cert-issuer">Domestika</p>
+          <p class="cert-desc">Diseño de UI, prototipos interactivos, componentes y flujos de usuario.</p>
+          <a href="certificates/figma.pdf" target="_blank" class="cert-link">
+            Ver certificado <span class="cert-arrow">↗</span>
+          </a>
+        </article>
+
+        <article class="cert-card reveal-up" data-delay="480">
+          <div class="cert-header">
+            <div class="cert-icon">🔐</div>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-name">Hacking con Malware</h3>
+          <p class="cert-issuer">Udemy</p>
+          <p class="cert-desc">Análisis de malware, hacking ético y fundamentos de ciberseguridad ofensiva.</p>
+          <a href="certificates/hacking-malware.pdf" target="_blank" class="cert-link">
+            Ver certificado <span class="cert-arrow">↗</span>
+          </a>
+        </article>
+
+        <article class="cert-card reveal-up" data-delay="560">
+          <div class="cert-header">
+            <div class="cert-icon">🚀</div>
+            <span class="cert-year">2022</span>
+          </div>
+          <h3 class="cert-name">Bootcamp Líderes Programadores</h3>
+          <p class="cert-issuer">SENACYT</p>
+          <p class="cert-desc">Programa intensivo de programación, resolución de problemas y habilidades TI.</p>
+          <a href="certificates/bootcamp-senacyt.pdf" target="_blank" class="cert-link">
+            Ver certificado <span class="cert-arrow">↗</span>
+          </a>
+        </article>
+
+        <article class="cert-card reveal-up" data-delay="640">
+          <div class="cert-header">
+            <div class="cert-icon">📊</div>
+            <span class="cert-year">2025</span>
+          </div>
+          <h3 class="cert-name">Management Consulting: Presentation Essential</h3>
+          <p class="cert-issuer">Udemy</p>
+          <p class="cert-desc">Comunicación estratégica, presentaciones ejecutivas y estructuración de propuestas.</p>
+          <a href="certificates/management.pdf" target="_blank" class="cert-link">
+            Ver certificado <span class="cert-arrow">↗</span>
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-label">
+        <span class="section-num">03</span>
+        <span class="section-tag">Mi Trabajo</span>
+      </div>
+
+      <h2 class="section-title reveal-up">
+        Proyec<span class="accent-ocean">tos</span>
+      </h2>
+      <p class="section-intro reveal-up" data-delay="100">
+        Estos son algunos de los proyectos que he desarrollado durante mi trayectoria profesional.
+      </p>
+
+      <div class="projects-list">
+
+        <!-- Project 1 -->
+        <article class="project-item reveal-up" data-delay="0">
+          <div class="project-meta">
+            <span class="project-num">01</span>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Sabores del Mar</h3>
+            <p class="project-desc">
+              Sitio web para un restaurante de mariscos con sistema de menú,
+              carrito de pedidos y reservas en línea. Resuelve la gestión
+              digital del negocio desde una sola plataforma con base de datos
+              relacional y panel de administración.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/amberlight123/Sabores-del-Mar" target="_blank" rel="noopener" class="project-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <img src="imgs/Sabores_Del_Mar.png" alt="Sabores del Mar" class="project-screenshot" />
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-item reveal-up" data-delay="120">
+          <div class="project-meta">
+            <span class="project-num">02</span>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Shell</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Vozelia</h3>
+            <p class="project-desc">
+              Sitio web corporativo para un proveedor de telefonía IP en Panamá.
+              Incluye autenticación de usuarios, gestión de sesiones y servidor
+              Apache configurado con rutas y seguridad básica. Centraliza la
+              presencia digital del servicio y el acceso de clientes.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/amberlight123/vozelia_site_personal_project" target="_blank" rel="noopener" class="project-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <img src="imgs/Vozelia.png" alt="Vozelia" class="project-screenshot" />
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-item reveal-up" data-delay="240">
+          <div class="project-meta">
+            <span class="project-num">03</span>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">PySide6</span>
+              <span class="tag">Npcap</span>
+              <span class="tag">Inno Setup</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Sentinel</h3>
+            <p class="project-desc">
+              Aplicación de escritorio para Windows que escanea redes locales,
+              identifica dispositivos conectados y audita puertos abiertos en
+              tiempo real. Reduce el diagnóstico de amenazas internas de
+              minutos a segundos.
+            </p>
+            <div class="project-links">
+              <a href="https://sentinel.zenreverse.space" target="_blank" rel="noopener" class="project-btn">
+                <img src="imgs/Sentinel_Logo.png" alt="Sentinel" style="width:16px; height:16px; object-fit:contain;" />
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+          <div class="project-visual">
+            <img src="imgs/Sentinel.png" alt="Sentinel" class="project-screenshot" />
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-label">
+        <span class="section-num">04</span>
+        <span class="section-tag">Hablemos</span>
+      </div>
+
+      <h2 class="section-title reveal-up">
+        ¿Tienes un<br/>
+        <em class="accent-mint">proyecto</em>?
+      </h2>
+      <p class="contact-sub reveal-up" data-delay="100">
+        Disponible para proyectos freelance, colaboraciones y oportunidades laborales.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-links reveal-up" data-delay="160">
+          <a id="email-card" class="contact-card">
+            <div class="contact-icon">✉</div>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+            </div>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/alberto1davis" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">LinkedIn</span>
+            </div>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/amberlight123" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">GitHub</span>
+            </div>
+            <span class="contact-arrow">↗</span>
+          </a>
+
+        </div>
+
+        <div class="contact-cta reveal-up" data-delay="280">
+          <div class="cta-big">
+            <p class="cta-available">
+              <span class="dot-pulse"></span>
+              Disponible para proyectos
+            </p>
+            <a id="email-btn" class="btn-primary large">
+              Enviar mensaje
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Alberto Davis</span>
+        <span class="footer-copy">© 2026 ZenReverse. Todos los derechos reservados.</span>
+        <a href="#hero" class="footer-top">↑ Inicio</a>
+      </div>
+    </div>
+  </footer>
+
+<script src="js/main.js?v=4"></script>
+
+<script>
+  (function() {
+    const u = "albertoantonio.davisc";
+    const d = "gmail.com";
+    const email = u + "@" + d;
+    const mailto = "https://mail.google.com/mail/?view=cm&fs=1&to=" + u + "%40" + d;
+
+    // Tarjeta de contacto
+    const card = document.getElementById("email-card");
+    if (card) card.setAttribute("href", mailto);
+
+    // Texto visible del email
+    const display = document.getElementById("email-display");
+    if (display) display.textContent = email;
+
+    // Botón enviar mensaje
+    const btn = document.getElementById("email-btn");
+    if (btn) btn.setAttribute("href", mailto);
+  })();
+</script>
+
+</body>
+</html>
