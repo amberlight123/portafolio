@@ -178,6 +178,7 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  background: transparent;
   border: 1px solid var(--grey-dim);
   color: var(--white);
   font-family: var(--font-head);
@@ -682,6 +683,15 @@ ul { list-style: none; }
   display: block;
   width: fit-content;
   margin: 40px auto 0;
+  background: var(--jet-3);
+  border-color: var(--mint);
+  color: var(--white);
+}
+
+#toggle-certs:hover {
+  background: var(--mint);
+  border-color: var(--mint);
+  color: var(--jet);
 }
 
 .cert-header {
