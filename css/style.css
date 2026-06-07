@@ -457,11 +457,14 @@ ul { list-style: none; }
 .ticker-track {
   display: flex;
   gap: 0;
+  width: max-content;
   white-space: nowrap;
   animation: ticker 20s linear infinite;
+  will-change: transform;
 }
 
 .ticker-track span {
+  flex: 0 0 auto;
   font-family: var(--font-mono);
   font-size: 0.7rem;
   text-transform: uppercase;
