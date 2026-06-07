@@ -662,6 +662,28 @@ ul { list-style: none; }
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
 
+.cert-hidden {
+  display: none;
+}
+
+.cert-hidden.cert-visible {
+  display: flex;
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.75s var(--ease), transform 0.75s var(--ease), border-color 0.3s, box-shadow 0.35s;
+}
+
+.cert-hidden.cert-visible.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#toggle-certs {
+  display: block;
+  width: fit-content;
+  margin: 40px auto 0;
+}
+
 .cert-header {
   display: flex;
   align-items: center;
@@ -1168,4 +1190,3 @@ ul { list-style: none; }
   .hero-scroll { display: none; }
   .about-skills { padding: 24px; }
 }
-

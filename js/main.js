@@ -119,6 +119,41 @@
 })();
 
 
+/* ─── CERTIFICATES SHOW/HIDE ─── */
+function initCertToggle() {
+  const toggleBtn = document.getElementById('toggle-certs');
+  const hiddenCerts = document.querySelectorAll('.cert-hidden');
+  if (!toggleBtn || !hiddenCerts.length) return;
+
+  let expanded = false;
+
+  toggleBtn.setAttribute('aria-expanded', 'false');
+
+  toggleBtn.addEventListener('click', () => {
+    expanded = !expanded;
+    toggleBtn.textContent = expanded ? 'Ver menos ↑' : 'Ver todos los certificados ↓';
+    toggleBtn.setAttribute('aria-expanded', String(expanded));
+
+    hiddenCerts.forEach(card => {
+      if (expanded) {
+        card.classList.add('cert-visible');
+        requestAnimationFrame(() => card.classList.add('visible'));
+        return;
+      }
+
+      card.classList.remove('visible');
+      window.setTimeout(() => {
+        if (!expanded) {
+          card.classList.remove('cert-visible');
+        }
+      }, 750);
+    });
+  });
+}
+
+initCertToggle();
+
+
 /* ─── SKILL BARS ─── */
 (function initSkillBars() {
   const container = document.querySelector('.about-skills');
