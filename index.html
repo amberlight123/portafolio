@@ -599,9 +599,91 @@
               <span class="dot-pulse"></span>
               Disponible para proyectos
             </p>
-            <a id="email-btn" class="btn-primary large">
-              Enviar mensaje
-            </a>
+
+            <div class="contact-form-intro">
+              <h3>Cuéntame qué proceso quieres simplificar.</h3>
+              <p>Desarrollo sistemas web, paneles administrativos y automatizaciones para pequeños negocios. Cuéntame qué problema necesitas resolver y revisaré si puedo ayudarte.</p>
+            </div>
+
+            <form id="project-contact-form" class="project-contact-form" novalidate>
+              <div class="form-field">
+                <label for="contact-name">Nombre</label>
+                <input id="contact-name" name="name" type="text" placeholder="¿Cómo te llamas?" autocomplete="name" required aria-describedby="contact-name-error" />
+                <p id="contact-name-error" class="form-error" data-error-for="contact-name"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-business">Empresa o negocio</label>
+                <input id="contact-business" name="business" type="text" placeholder="Nombre del negocio — opcional" autocomplete="organization" />
+                <p class="form-error" data-error-for="contact-business"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" placeholder="tu@empresa.com" autocomplete="email" required aria-describedby="contact-email-error" />
+                <p id="contact-email-error" class="form-error" data-error-for="contact-email"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-whatsapp">WhatsApp</label>
+                <input id="contact-whatsapp" name="whatsapp" type="tel" placeholder="+507 6000-0000 — opcional" autocomplete="tel" />
+                <p class="form-error" data-error-for="contact-whatsapp"></p>
+              </div>
+
+              <div class="form-field form-field-wide">
+                <label for="contact-project-type">Tipo de proyecto</label>
+                <select id="contact-project-type" name="project_type" required aria-describedby="contact-project-type-error">
+                  <option value="" selected disabled>Selecciona una opción</option>
+                  <option>Sistema web para un negocio</option>
+                  <option>Reservas, citas o agenda</option>
+                  <option>Pedidos, catálogo o panel administrativo</option>
+                  <option>Automatización con Python</option>
+                  <option>Análisis y limpieza de archivos CSV</option>
+                  <option>Funciones asistidas por inteligencia artificial</option>
+                  <option>Aplicación de escritorio para Windows</option>
+                  <option>Mejora o mantenimiento de un sitio existente</option>
+                  <option>MVP o prototipo</option>
+                  <option>Otro / todavía no estoy seguro</option>
+                </select>
+                <p id="contact-project-type-error" class="form-error" data-error-for="contact-project-type"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-budget">Presupuesto estimado</label>
+                <select id="contact-budget" name="budget">
+                  <option value="" selected>Selecciona una opción</option>
+                  <option>Menos de B/.500</option>
+                  <option>B/.500 – B/.1,000</option>
+                  <option>B/.1,000 – B/.2,500</option>
+                  <option>Más de B/.2,500</option>
+                  <option>Todavía no está definido</option>
+                </select>
+                <p class="form-error" data-error-for="contact-budget"></p>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-timeline">Plazo aproximado</label>
+                <select id="contact-timeline" name="timeline">
+                  <option value="" selected>Selecciona una opción</option>
+                  <option>Lo antes posible</option>
+                  <option>Entre 2 y 4 semanas</option>
+                  <option>Entre 1 y 2 meses</option>
+                  <option>Más de 2 meses</option>
+                  <option>El plazo es flexible</option>
+                </select>
+                <p class="form-error" data-error-for="contact-timeline"></p>
+              </div>
+
+              <div class="form-field form-field-wide">
+                <label for="contact-description">Cuéntame sobre el proyecto</label>
+                <textarea id="contact-description" name="description" rows="6" placeholder="Describe tu negocio, el problema actual, quién utilizará el sistema y qué resultado esperas obtener." required aria-describedby="contact-description-error"></textarea>
+                <p id="contact-description-error" class="form-error" data-error-for="contact-description"></p>
+              </div>
+
+              <button class="project-form-submit" type="submit">Enviar solicitud <span aria-hidden="true">→</span></button>
+              <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
+              <p class="form-privacy">Al enviar este formulario, aceptas el tratamiento de tus datos conforme a la Política de Privacidad.</p>
+            </form>
           </div>
         </div>
       </div>
@@ -636,9 +718,6 @@
     const display = document.getElementById("email-display");
     if (display) display.textContent = email;
 
-    // Botón enviar mensaje
-    const btn = document.getElementById("email-btn");
-    if (btn) btn.setAttribute("href", mailto);
   })();
 </script>
 

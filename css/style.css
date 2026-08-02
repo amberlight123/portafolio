@@ -1092,6 +1092,7 @@ ul { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 32px;
+  width: 100%;
 }
 
 .cta-available {
@@ -1112,6 +1113,154 @@ ul { list-style: none; }
   flex-shrink: 0;
   box-shadow: 0 0 0 0 var(--mint-glow);
   animation: pulse 2s ease-in-out infinite;
+}
+
+.contact-form-intro h3 {
+  font-family: var(--font-head);
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.contact-form-intro p {
+  max-width: 620px;
+  color: var(--grey);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.project-contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.form-field {
+  min-width: 0;
+}
+
+.form-field-wide,
+.project-form-submit,
+.form-status,
+.form-privacy {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--grey);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  border: 1px solid var(--grey-dim);
+  border-radius: 4px;
+  outline: none;
+  background: var(--jet-3);
+  color: var(--white);
+  font: inherit;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 13px 14px;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.form-field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form-field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--mint) 50%), linear-gradient(135deg, var(--mint) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 2px), calc(100% - 13px) calc(50% - 2px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #777;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--mint);
+  box-shadow: 0 0 0 3px var(--mint-dim);
+  background: var(--jet-4);
+}
+
+.form-field.has-error input,
+.form-field.has-error select,
+.form-field.has-error textarea {
+  border-color: #e66a6a;
+}
+
+.form-error {
+  min-height: 18px;
+  margin-top: 5px;
+  color: #f08a8a;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.project-form-submit {
+  width: 100%;
+  min-height: 56px;
+  border: 1px solid var(--mint);
+  border-radius: 3px;
+  background: var(--mint);
+  color: var(--jet);
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s var(--ease-bounce), opacity 0.25s;
+}
+
+.project-form-submit:hover:not(:disabled) {
+  background: #00e8bb;
+  border-color: #00e8bb;
+  transform: translateY(-2px);
+}
+
+.project-form-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.form-status {
+  display: none;
+  margin-top: -4px;
+  border-left: 2px solid var(--mint);
+  padding-left: 12px;
+  color: var(--white);
+  font-size: 0.85rem;
+}
+
+.form-status.is-visible { display: block; }
+.form-status.is-success { border-color: var(--mint); }
+.form-status.is-error { border-color: #e66a6a; color: #f08a8a; }
+
+.form-privacy {
+  color: var(--grey);
+  font-size: 0.72rem;
+  line-height: 1.5;
+  margin-top: -4px;
 }
 
 @keyframes pulse {
@@ -1199,6 +1348,7 @@ ul { list-style: none; }
 
   .certs-grid { grid-template-columns: 1fr; }
   .cert-card { padding: 24px; }
+  .contact-cta { padding-top: 0; }
 
   .cursor, .cursor-follower { display: none; }
   body { cursor: auto; }
@@ -1216,6 +1366,11 @@ ul { list-style: none; }
   .cert-card { padding: 22px; }
   .cert-name { font-size: 0.9rem; }
   #toggle-certs { max-width: 100%; text-align: center; }
+  .project-contact-form { grid-template-columns: 1fr; gap: 18px; }
+  .contact-form-intro h3 { font-size: 1.45rem; }
+  .form-field input,
+  .form-field select,
+  .form-field textarea { font-size: 16px; }
   .hero-cta { flex-direction: column; align-items: flex-start; }
   .hero-scroll { display: none; }
   .about-skills { padding: 24px; }

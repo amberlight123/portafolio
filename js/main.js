@@ -154,6 +154,101 @@ function initCertToggle() {
 initCertToggle();
 
 
+/* ─── PROJECT CONTACT FORM ─── */
+(function initProjectContactForm() {
+  const form = document.getElementById('project-contact-form');
+  if (!form) return;
+
+  const submitBtn = form.querySelector('.project-form-submit');
+  const status = document.getElementById('contact-form-status');
+  const recipient = 'albertoantonio.davisc@gmail.com';
+  const endpoint = `https://formsubmit.co/ajax/${recipient}`;
+  const requiredMessages = {
+    'contact-name': 'Ingresa tu nombre.',
+    'contact-email': 'Ingresa un correo electrónico válido.',
+    'contact-project-type': 'Selecciona el tipo de proyecto.',
+    'contact-description': 'Cuéntame brevemente sobre el proyecto.'
+  };
+
+  function setError(field, message = '') {
+    const error = form.querySelector(`[data-error-for="${field.id}"]`);
+    const wrapper = field.closest('.form-field');
+    if (error) error.textContent = message;
+    if (wrapper) wrapper.classList.toggle('has-error', Boolean(message));
+    field.setAttribute('aria-invalid', String(Boolean(message)));
+  }
+
+  function validateField(field) {
+    const value = field.value.trim();
+    let message = '';
+
+    if (field.required && !value) {
+      message = requiredMessages[field.id];
+    } else if (field.type === 'email' && value && !field.validity.valid) {
+      message = 'Ingresa un correo electrónico válido.';
+    }
+
+    setError(field, message);
+    return !message;
+  }
+
+  form.querySelectorAll('input, select, textarea').forEach(field => {
+    field.addEventListener('blur', () => validateField(field));
+    field.addEventListener('input', () => {
+      if (field.getAttribute('aria-invalid') === 'true') validateField(field);
+    });
+    field.addEventListener('change', () => {
+      if (field.getAttribute('aria-invalid') === 'true') validateField(field);
+    });
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    status.className = 'form-status';
+
+    const requiredFields = form.querySelectorAll('[required]');
+    const isValid = [...requiredFields].map(validateField).every(Boolean);
+    if (!isValid) {
+      form.querySelector('[aria-invalid="true"]')?.focus();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+
+    const formData = Object.fromEntries(new FormData(form).entries());
+    const payload = {
+      ...formData,
+      _subject: 'Nueva solicitud desde el portafolio de Alberto Davis'
+    };
+
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) throw new Error('Request failed');
+
+      form.reset();
+      form.querySelectorAll('[aria-invalid="true"]').forEach(field => setError(field));
+      status.textContent = 'Solicitud enviada correctamente. Me pondré en contacto contigo pronto.';
+      status.className = 'form-status is-visible is-success';
+    } catch (error) {
+      status.textContent = 'No se pudo enviar la solicitud. Inténtalo nuevamente o contáctame por WhatsApp.';
+      status.className = 'form-status is-visible is-error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Enviar solicitud <span aria-hidden="true">→</span>';
+    }
+  });
+})();
+
+
 /* ─── SKILL BARS ─── */
 (function initSkillBars() {
   const container = document.querySelector('.about-skills');
