@@ -632,15 +632,16 @@
             <label for="contact-project-type">Tipo de proyecto</label>
             <select id="contact-project-type" name="project_type" required aria-describedby="contact-project-type-error">
               <option value="" selected disabled>Selecciona una opción</option>
-              <option>Sistema web</option>
-              <option>Reservas, citas o agenda</option>
-              <option>Panel administrativo</option>
-              <option>Automatización con Python</option>
-              <option>Análisis de archivos CSV</option>
-              <option>Integración de inteligencia artificial</option>
-              <option>Aplicación de escritorio</option>
-              <option>Mantenimiento o mejora de un sistema</option>
-              <option>Otro</option>
+              <option value="Sistema web">Página o sistema para mi negocio</option>
+              <option value="Reservas, citas o agenda">Agenda y reservas en línea</option>
+              <option value="Panel administrativo">Gestión interna del negocio</option>
+              <option value="Automatización con Python">Automatizar tareas repetitivas</option>
+              <option value="Análisis de archivos CSV">Analizar y organizar datos</option>
+              <option value="Integración de inteligencia artificial">Añadir funciones inteligentes</option>
+              <option value="Aplicación de escritorio">Programa para computadora</option>
+              <option value="Mantenimiento o mejora de un sistema">Mejorar un sistema existente</option>
+              <option value="Otro">Otra necesidad</option>
+              <option value="No estoy seguro de lo que necesito">No estoy seguro de lo que necesito</option>
             </select>
             <p id="contact-project-type-error" class="form-error" data-error-for="contact-project-type"></p>
           </div>
