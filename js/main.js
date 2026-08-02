@@ -157,7 +157,11 @@ initCertToggle();
 /* ─── PROJECT CONTACT FORM ─── */
 (function initProjectContactForm() {
   const form = document.getElementById('project-contact-form');
-  if (!form) return;
+  const toggle = document.getElementById('contact-form-toggle');
+  const panel = document.getElementById('contact-form-panel');
+  const contactSection = document.getElementById('contact');
+  const contactLinks = contactSection?.querySelector('.contact-links');
+  if (!form || !toggle || !panel || !contactSection || !contactLinks) return;
 
   const submitBtn = form.querySelector('.project-form-submit');
   const status = document.getElementById('contact-form-status');
@@ -169,6 +173,37 @@ initCertToggle();
     'contact-project-type': 'Selecciona el tipo de proyecto.',
     'contact-description': 'Cuéntame brevemente sobre el proyecto.'
   };
+
+  function resetFormState() {
+    form.reset();
+    form.querySelectorAll('input, select, textarea').forEach(field => setError(field));
+    status.className = 'form-status';
+    status.textContent = '';
+  }
+
+  function closeForm() {
+    panel.hidden = true;
+    toggle.hidden = false;
+    toggle.setAttribute('aria-expanded', 'false');
+    contactLinks.classList.remove('is-form-open');
+    resetFormState();
+  }
+
+  toggle.addEventListener('click', () => {
+    panel.hidden = false;
+    toggle.hidden = true;
+    toggle.setAttribute('aria-expanded', 'true');
+    contactLinks.classList.add('is-form-open');
+    panel.querySelector('input')?.focus();
+  });
+
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting && !panel.hidden) closeForm();
+    });
+  }, { threshold: 0.05 });
+
+  sectionObserver.observe(contactSection);
 
   function setError(field, message = '') {
     const error = form.querySelector(`[data-error-for="${field.id}"]`);

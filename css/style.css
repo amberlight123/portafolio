@@ -1131,6 +1131,16 @@ ul { list-style: none; }
   line-height: 1.7;
 }
 
+.contact-form-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contact-links.is-form-open .contact-card:last-child {
+  display: none;
+}
+
 .project-contact-form {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

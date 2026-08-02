@@ -600,12 +600,17 @@
               Disponible para proyectos
             </p>
 
-            <div class="contact-form-intro">
-              <h3>Cuéntame qué proceso quieres simplificar.</h3>
-              <p>Desarrollo sistemas web, paneles administrativos y automatizaciones para pequeños negocios. Cuéntame qué problema necesitas resolver y revisaré si puedo ayudarte.</p>
-            </div>
+            <button id="contact-form-toggle" class="btn-primary large" type="button" aria-expanded="false" aria-controls="contact-form-panel">
+              Enviar mensaje
+            </button>
 
-            <form id="project-contact-form" class="project-contact-form" novalidate>
+            <div id="contact-form-panel" class="contact-form-panel" hidden>
+              <div class="contact-form-intro">
+                <h3>Cuéntame qué proceso quieres simplificar.</h3>
+                <p>Desarrollo sistemas web, paneles administrativos y automatizaciones para pequeños negocios. Cuéntame qué problema necesitas resolver y revisaré si puedo ayudarte.</p>
+              </div>
+
+              <form id="project-contact-form" class="project-contact-form" novalidate>
               <div class="form-field">
                 <label for="contact-name">Nombre</label>
                 <input id="contact-name" name="name" type="text" placeholder="¿Cómo te llamas?" autocomplete="name" required aria-describedby="contact-name-error" />
@@ -649,19 +654,6 @@
               </div>
 
               <div class="form-field">
-                <label for="contact-budget">Presupuesto estimado</label>
-                <select id="contact-budget" name="budget">
-                  <option value="" selected>Selecciona una opción</option>
-                  <option>Menos de B/.500</option>
-                  <option>B/.500 – B/.1,000</option>
-                  <option>B/.1,000 – B/.2,500</option>
-                  <option>Más de B/.2,500</option>
-                  <option>Todavía no está definido</option>
-                </select>
-                <p class="form-error" data-error-for="contact-budget"></p>
-              </div>
-
-              <div class="form-field">
                 <label for="contact-timeline">Plazo aproximado</label>
                 <select id="contact-timeline" name="timeline">
                   <option value="" selected>Selecciona una opción</option>
@@ -683,7 +675,8 @@
               <button class="project-form-submit" type="submit">Enviar solicitud <span aria-hidden="true">→</span></button>
               <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
               <p class="form-privacy">Al enviar este formulario, aceptas el tratamiento de tus datos conforme a la Política de Privacidad.</p>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
