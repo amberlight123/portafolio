@@ -157,11 +157,13 @@ initCertToggle();
 /* ─── PROJECT CONTACT FORM ─── */
 (function initProjectContactForm() {
   const form = document.getElementById('project-contact-form');
-  const toggle = document.getElementById('contact-form-toggle');
-  const panel = document.getElementById('contact-form-panel');
-  const contactSection = document.getElementById('contact');
-  const contactLinks = contactSection?.querySelector('.contact-links');
-  if (!form || !toggle || !panel || !contactSection || !contactLinks) return;
+  const initialView = document.getElementById('contact-initial-view');
+  const formView = document.getElementById('contact-form-view');
+  const successView = document.getElementById('contact-success-view');
+  const openBtn = document.getElementById('contact-form-open');
+  const backBtn = document.getElementById('contact-form-back');
+  const successBackBtn = document.getElementById('contact-success-back');
+  if (!form || !initialView || !formView || !successView || !openBtn || !backBtn || !successBackBtn) return;
 
   const submitBtn = form.querySelector('.project-form-submit');
   const status = document.getElementById('contact-form-status');
@@ -173,6 +175,28 @@ initCertToggle();
     'contact-project-type': 'Selecciona el tipo de proyecto.',
     'contact-description': 'Cuéntame brevemente sobre el proyecto.'
   };
+  let activeView = initialView;
+
+  function switchView(nextView, onShown) {
+    if (activeView === nextView) return;
+
+    const previousView = activeView;
+    previousView.classList.remove('is-active');
+    previousView.classList.add('is-leaving');
+
+    window.setTimeout(() => {
+      previousView.hidden = true;
+      previousView.classList.remove('is-leaving');
+      nextView.hidden = false;
+
+      requestAnimationFrame(() => {
+        nextView.classList.add('is-active');
+        onShown?.();
+      });
+
+      activeView = nextView;
+    }, 280);
+  }
 
   function resetFormState() {
     form.reset();
@@ -181,29 +205,19 @@ initCertToggle();
     status.textContent = '';
   }
 
-  function closeForm() {
-    panel.hidden = true;
-    toggle.hidden = false;
-    toggle.setAttribute('aria-expanded', 'false');
-    contactLinks.classList.remove('is-form-open');
+  function returnToContact() {
     resetFormState();
+    openBtn.setAttribute('aria-expanded', 'false');
+    switchView(initialView);
   }
 
-  toggle.addEventListener('click', () => {
-    panel.hidden = false;
-    toggle.hidden = true;
-    toggle.setAttribute('aria-expanded', 'true');
-    contactLinks.classList.add('is-form-open');
-    panel.querySelector('input')?.focus();
+  openBtn.addEventListener('click', () => {
+    openBtn.setAttribute('aria-expanded', 'true');
+    switchView(formView, () => form.querySelector('input')?.focus());
   });
 
-  const sectionObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting && !panel.hidden) closeForm();
-    });
-  }, { threshold: 0.05 });
-
-  sectionObserver.observe(contactSection);
+  backBtn.addEventListener('click', returnToContact);
+  successBackBtn.addEventListener('click', returnToContact);
 
   function setError(field, message = '') {
     const error = form.querySelector(`[data-error-for="${field.id}"]`);
@@ -269,12 +283,10 @@ initCertToggle();
 
       if (!response.ok) throw new Error('Request failed');
 
-      form.reset();
-      form.querySelectorAll('[aria-invalid="true"]').forEach(field => setError(field));
-      status.textContent = 'Solicitud enviada correctamente. Me pondré en contacto contigo pronto.';
-      status.className = 'form-status is-visible is-success';
+      resetFormState();
+      switchView(successView);
     } catch (error) {
-      status.textContent = 'No se pudo enviar la solicitud. Inténtalo nuevamente o contáctame por WhatsApp.';
+      status.textContent = 'No se pudo enviar la solicitud. Inténtalo nuevamente.';
       status.className = 'form-status is-visible is-error';
     } finally {
       submitBtn.disabled = false;

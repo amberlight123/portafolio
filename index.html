@@ -548,6 +548,7 @@
   <!-- ─── CONTACT ─── -->
   <section id="contact" class="section contact">
     <div class="container">
+      <div id="contact-initial-view" class="contact-view is-active">
       <div class="section-label">
         <span class="section-num">04</span>
         <span class="section-tag">Hablemos</span>
@@ -600,85 +601,69 @@
               Disponible para proyectos
             </p>
 
-            <button id="contact-form-toggle" class="btn-primary large" type="button" aria-expanded="false" aria-controls="contact-form-panel">
-              Enviar mensaje
+            <button id="contact-form-open" class="btn-primary large" type="button" aria-expanded="false" aria-controls="contact-form-view">
+              Enviar solicitud
             </button>
-
-            <div id="contact-form-panel" class="contact-form-panel" hidden>
-              <div class="contact-form-intro">
-                <h3>Cuéntame qué proceso quieres simplificar.</h3>
-                <p>Desarrollo sistemas web, paneles administrativos y automatizaciones para pequeños negocios. Cuéntame qué problema necesitas resolver y revisaré si puedo ayudarte.</p>
-              </div>
-
-              <form id="project-contact-form" class="project-contact-form" novalidate>
-              <div class="form-field">
-                <label for="contact-name">Nombre</label>
-                <input id="contact-name" name="name" type="text" placeholder="¿Cómo te llamas?" autocomplete="name" required aria-describedby="contact-name-error" />
-                <p id="contact-name-error" class="form-error" data-error-for="contact-name"></p>
-              </div>
-
-              <div class="form-field">
-                <label for="contact-business">Empresa o negocio</label>
-                <input id="contact-business" name="business" type="text" placeholder="Nombre del negocio — opcional" autocomplete="organization" />
-                <p class="form-error" data-error-for="contact-business"></p>
-              </div>
-
-              <div class="form-field">
-                <label for="contact-email">Email</label>
-                <input id="contact-email" name="email" type="email" placeholder="tu@empresa.com" autocomplete="email" required aria-describedby="contact-email-error" />
-                <p id="contact-email-error" class="form-error" data-error-for="contact-email"></p>
-              </div>
-
-              <div class="form-field">
-                <label for="contact-whatsapp">WhatsApp</label>
-                <input id="contact-whatsapp" name="whatsapp" type="tel" placeholder="+507 6000-0000 — opcional" autocomplete="tel" />
-                <p class="form-error" data-error-for="contact-whatsapp"></p>
-              </div>
-
-              <div class="form-field form-field-wide">
-                <label for="contact-project-type">Tipo de proyecto</label>
-                <select id="contact-project-type" name="project_type" required aria-describedby="contact-project-type-error">
-                  <option value="" selected disabled>Selecciona una opción</option>
-                  <option>Sistema web para un negocio</option>
-                  <option>Reservas, citas o agenda</option>
-                  <option>Pedidos, catálogo o panel administrativo</option>
-                  <option>Automatización con Python</option>
-                  <option>Análisis y limpieza de archivos CSV</option>
-                  <option>Funciones asistidas por inteligencia artificial</option>
-                  <option>Aplicación de escritorio para Windows</option>
-                  <option>Mejora o mantenimiento de un sitio existente</option>
-                  <option>MVP o prototipo</option>
-                  <option>Otro / todavía no estoy seguro</option>
-                </select>
-                <p id="contact-project-type-error" class="form-error" data-error-for="contact-project-type"></p>
-              </div>
-
-              <div class="form-field">
-                <label for="contact-timeline">Plazo aproximado</label>
-                <select id="contact-timeline" name="timeline">
-                  <option value="" selected>Selecciona una opción</option>
-                  <option>Lo antes posible</option>
-                  <option>Entre 2 y 4 semanas</option>
-                  <option>Entre 1 y 2 meses</option>
-                  <option>Más de 2 meses</option>
-                  <option>El plazo es flexible</option>
-                </select>
-                <p class="form-error" data-error-for="contact-timeline"></p>
-              </div>
-
-              <div class="form-field form-field-wide">
-                <label for="contact-description">Cuéntame sobre el proyecto</label>
-                <textarea id="contact-description" name="description" rows="6" placeholder="Describe tu negocio, el problema actual, quién utilizará el sistema y qué resultado esperas obtener." required aria-describedby="contact-description-error"></textarea>
-                <p id="contact-description-error" class="form-error" data-error-for="contact-description"></p>
-              </div>
-
-              <button class="project-form-submit" type="submit">Enviar solicitud <span aria-hidden="true">→</span></button>
-              <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
-              <p class="form-privacy">Al enviar este formulario, aceptas el tratamiento de tus datos conforme a la Política de Privacidad.</p>
-              </form>
-            </div>
           </div>
         </div>
+      </div>
+      </div>
+
+      <div id="contact-form-view" class="contact-view contact-form-view" hidden>
+        <div class="contact-form-intro">
+          <h2>Cuéntame sobre tu proyecto</h2>
+          <p>Describe lo que necesitas y me pondré en contacto contigo.</p>
+        </div>
+
+        <form id="project-contact-form" class="project-contact-form" novalidate>
+          <div class="form-field">
+            <label for="contact-name">Nombre</label>
+            <input id="contact-name" name="name" type="text" placeholder="¿Cómo te llamas?" autocomplete="name" required aria-describedby="contact-name-error" />
+            <p id="contact-name-error" class="form-error" data-error-for="contact-name"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" placeholder="tu@empresa.com" autocomplete="email" required aria-describedby="contact-email-error" />
+            <p id="contact-email-error" class="form-error" data-error-for="contact-email"></p>
+          </div>
+
+          <div class="form-field form-field-wide">
+            <label for="contact-project-type">Tipo de proyecto</label>
+            <select id="contact-project-type" name="project_type" required aria-describedby="contact-project-type-error">
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option>Sistema web</option>
+              <option>Reservas, citas o agenda</option>
+              <option>Panel administrativo</option>
+              <option>Automatización con Python</option>
+              <option>Análisis de archivos CSV</option>
+              <option>Integración de inteligencia artificial</option>
+              <option>Aplicación de escritorio</option>
+              <option>Mantenimiento o mejora de un sistema</option>
+              <option>Otro</option>
+            </select>
+            <p id="contact-project-type-error" class="form-error" data-error-for="contact-project-type"></p>
+          </div>
+
+          <div class="form-field form-field-wide">
+            <label for="contact-description">Descripción del proyecto</label>
+            <textarea id="contact-description" name="description" rows="4" placeholder="Describe brevemente qué necesitas resolver." required aria-describedby="contact-description-error"></textarea>
+            <p id="contact-description-error" class="form-error" data-error-for="contact-description"></p>
+          </div>
+
+          <div class="form-actions">
+            <button id="contact-form-back" class="project-form-back" type="button">Volver</button>
+            <button class="project-form-submit" type="submit">Enviar <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div id="contact-success-view" class="contact-view contact-success-view" hidden>
+        <p class="success-eyebrow"><span class="dot-pulse"></span> Solicitud enviada</p>
+        <h2>Solicitud enviada correctamente.</h2>
+        <p>Me pondré en contacto contigo pronto.</p>
+        <button id="contact-success-back" class="btn-primary" type="button">Volver al contacto</button>
       </div>
     </div>
   </section>
